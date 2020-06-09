@@ -1,7 +1,7 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const cors = require('cors')
-const schemaSpaceX = require('./schemaSpaceX')
+const schema = require('./schema')
 
 const app = express();
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(cors())
 
 app.use('/graphql', graphqlHTTP({
-    schemaSpaceX,
+    schema,
     graphiql: true,
   }),
 );
